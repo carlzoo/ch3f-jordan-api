@@ -9,15 +9,14 @@ async fn index(req: HttpRequest) -> &'static str {
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
-
     HttpServer::new(|| {
         App::new()
             // enable logger
             .wrap(middleware::Logger::default())
-            .service(web::resource("/index.html").to(|| async { "Hello world!"}))
+            .service(web::resource("/index.html").to(|| async { "Hello world!" }))
             .service(web::resource("/").to(index))
     })
-        .bind("127.0.0.1:8080")?
-        .run()
-        .await
+    .bind("0.0.0.0:8000")?
+    .run()
+    .await
 }
