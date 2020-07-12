@@ -1,3 +1,4 @@
+mod db;
 use actix_web::{middleware, web, App, HttpRequest, HttpServer};
 
 async fn index(req: HttpRequest) -> &'static str {
