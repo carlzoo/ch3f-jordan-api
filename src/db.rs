@@ -3,7 +3,7 @@ use std::env;
 use std::error::Error as StdErr;
 use std::fmt;
 
-const ENV_DB_PATH: &'static str = "CH3F_DB_PATH";
+pub const ENV_DB_PATH: &'static str = "CH3F_DB_PATH";
 
 #[derive(Debug)]
 pub enum Error {
