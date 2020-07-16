@@ -12,10 +12,6 @@ RUN cargo build --target x86_64-unknown-linux-musl --release
 FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates 
-COPY --from=build /target/x86_64-unknown-linux-musl/release/ch3f-jordan .
+COPY --from=build /target/x86_64-unknown-linux-musl/release/ch3f_jordan .
 
-CMD ["/ch3f-jordan"]
-
-
-
-
+CMD ["/ch3f_jordan"]
