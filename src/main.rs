@@ -1,5 +1,5 @@
-mod db;
 use actix_web::{middleware, web, App, HttpRequest, HttpServer};
+use ch3f_utils::db;
 
 async fn index(req: HttpRequest) -> &'static str {
     println!("REQ: {:?}", req);
